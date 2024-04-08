@@ -2,24 +2,24 @@ substitutions:
   name: "shys-tx-ultimate"
   friendly_name: "TX Ultimate"
 
-  relay_count: "2"
+  relay_count: "3"
 
   toggle_relay_1_on_touch: "true"
   toggle_relay_2_on_touch: "true"
   toggle_relay_3_on_touch: "true"
 
-  vibra_time: 150ms
+  vibra_time: 50ms
   button_on_time: 500ms
 
-  button_brightness: "0.7"
+  button_brightness: "1"
   button_color: "{0,0,100}"
 
   nightlight: "on"
   nightlight_brightness: "0.2"
   nightlight_color: "{80,70,0}"
 
-  latitude: "50.123456°"
-  longitude: "5.654321°"
+  latitude: "47.22717291787173°"
+  longitude: "8.816187362222658°"
 
   touch_brightness: "1"
   touch_color: "{0,100,100}"
@@ -113,7 +113,7 @@ logger:
     uart_debug: INFO
 
 dashboard_import:
-  package_import_url: github://SmartHome-yourself/sonoff-tx-ultimate-for-esphome/tx_ultimate.yaml@main
+  package_import_url: github://xenofex7/sonoff-tx-ultimate-for-esphome/tx_ultimate.yaml@main
   import_full_config: false
 
 api:
@@ -122,7 +122,8 @@ ota:
 
 wifi:
   ap:
-    password: "12345678"
+    ssid: "sonoff-ultimate"
+    password: "Ultimate!"
     
 improv_serial:
 
@@ -132,7 +133,7 @@ external_components:
 #  - source: /config/esphome/my_components
   - source:
       type: git
-      url: https://github.com/SmartHome-yourself/sonoff-tx-ultimate-for-esphome
+      url: https://github.com/xenofex7/sonoff-tx-ultimate-for-esphome
       ref: main
     components: [tx_ultimate_touch]
     
