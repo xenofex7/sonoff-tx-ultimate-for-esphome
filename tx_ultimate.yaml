@@ -8,10 +8,10 @@ substitutions:
   toggle_relay_2_on_touch: "true"
   toggle_relay_3_on_touch: "true"
 
-  vibra_time: 50ms
-  button_on_time: 500ms
+  vibra_time: 20ms
+  button_on_time: 2000ms
 
-  button_brightness: "1"
+  button_brightness: "0.3"
   button_color: "{0,100,0}"
 
   nightlight: "on"
@@ -22,7 +22,7 @@ substitutions:
   longitude: "8.816187362222658°"
 
   touch_brightness: "1"
-  touch_color: "{0,100,100}"
+  touch_color: "{0,0,100}"
   touch_effect: "Scan"
 
   long_press_brightness: "1"
