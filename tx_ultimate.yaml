@@ -12,11 +12,11 @@ substitutions:
   button_on_time: 500ms
 
   button_brightness: "1"
-  button_color: "{0,0,100}"
+  button_color: "{0,100,0}"
 
   nightlight: "on"
   nightlight_brightness: "0.2"
-  nightlight_color: "{80,70,0}"
+  nightlight_color: "{100,74,31}"
 
   latitude: "47.22717291787173°"
   longitude: "8.816187362222658°"
@@ -27,18 +27,18 @@ substitutions:
 
   long_press_brightness: "1"
   long_press_color: "{100,0,0}"
-  long_press_effect: ""
+  long_press_effect: "Rainbow"
 
   multi_touch_brightness: "1"
   multi_touch_color: "{0,0,0}"
   multi_touch_effect: "Rainbow"
 
   swipe_left_brightness: "1"
-  swipe_left_color: "{0,100,0}"
+  swipe_left_color: "{100,0,0}"
   swipe_left_effect: ""
 
   swipe_right_brightness: "1"
-  swipe_right_color: "{100,0,70}"
+  swipe_right_color: "{0,100,0}"
   swipe_right_effect: ""
 
   relay_1_pin: GPIO18
