@@ -61,7 +61,6 @@ substitutions:
 
   touchpanel_power_pin: GPIO5
 
-
 esphome:
   name: ${name}
   friendly_name: ${friendly_name}
@@ -136,8 +135,6 @@ external_components:
       url: https://github.com/xenofex7/sonoff-tx-ultimate-for-esphome
       ref: main
     components: [tx_ultimate_touch]
-    
-
 
 globals:
   - id: nightlight_color
@@ -168,8 +165,6 @@ globals:
     type: int [3]
     restore_value: no
     initial_value: ${touch_color}    
-
-
 
 binary_sensor:
   - platform: template
@@ -536,18 +531,22 @@ tx_ultimate_touch:
 
 time:
   - platform: homeassistant
+    id: homeassistant_time
+    on_time:
+      # Every 15 minutes
+      - minutes: /15
+        then:
+          - script.execute: refresh_nightlight
   - platform: sntp
     on_time:
       # Every 5 minutes
-      - seconds: 0
-        minutes: /5
+      - hours: /1
         then:
           - script.execute: refresh_nightlight
 
 sun:
   latitude: ${latitude}
   longitude: ${longitude}
-
 
 script:
   - id: refresh_nightlight
