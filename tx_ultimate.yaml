@@ -377,7 +377,6 @@ light:
               num_leds: 28
           add_led_interval: 100ms
           reverse: false
-          gradient: false
       - Scan:
           name: "Effect"
           move_interval: 100ms
