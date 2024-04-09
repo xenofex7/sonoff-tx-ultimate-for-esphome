@@ -23,7 +23,7 @@ substitutions:
 
   touch_brightness: "1"
   touch_color: "{0,0,100}"
-  touch_effect: "Scan"
+  touch_effect: "Random"
 
   long_press_brightness: "1"
   long_press_color: "{100,0,0}"
@@ -31,15 +31,15 @@ substitutions:
 
   multi_touch_brightness: "1"
   multi_touch_color: "{0,0,0}"
-  multi_touch_effect: "Rainbow"
+  multi_touch_effect: "Color Wipe"
 
   swipe_left_brightness: "1"
   swipe_left_color: "{100,0,0}"
-  swipe_left_effect: ""
+  swipe_left_effect: "Random Twinkle"
 
   swipe_right_brightness: "1"
   swipe_right_color: "{0,100,0}"
-  swipe_right_effect: ""
+  swipe_right_effect: "Scan"
 
   relay_1_pin: GPIO18
   relay_2_pin: GPIO17
@@ -352,14 +352,40 @@ light:
     id: leds
     default_transition_length: 0s
     effects:
+      - pulse:
+          name: "Pulse"
+          transition_length: 1s
+          update_interval: 2s
+      - random:
+          name: "Random"
+          transition_length: 4s
+          update_interval: 5s
       - addressable_rainbow:
           name: "Rainbow"
           speed: 30
           width: 8
-      - pulse:
-          name: "Pulse"
-          transition_length: 1.4s
-          update_interval: 1s
+      - addressable_color_wipe:
+          name: "Color Wipe"
+          colors:
+            - red: 100%
+              green: 100%
+              blue: 100%
+              num_leds: 28
+            - red: 0%
+              green: 0%
+              blue: 0%
+              num_leds: 28
+          add_led_interval: 100ms
+          reverse: false
+          gradient: false
+      - Scan:
+          name: "Effect"
+          move_interval: 100ms
+          scan_width: 3
+      - addressable_random_twinkle:
+          name: "Random Twinkle"
+          twinkle_probability: 5%
+          progress_interval: 32ms
 
     on_turn_off:
       then:
