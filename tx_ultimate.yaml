@@ -30,7 +30,7 @@ substitutions:
   long_press_effect: "Rainbow"
 
   multi_touch_brightness: "1"
-  multi_touch_color: "{0,0,0}"
+  multi_touch_color: "{0,0,100}"
   multi_touch_effect: "Color Wipe"
 
   swipe_left_brightness: "1"
